@@ -11,6 +11,11 @@ public class Menu : MonoBehaviour
     public Transform mainCanvas;
     GameObject holder;
     public Material shaderMaterial;
+    float menuSize = 10;
+
+
+    public float getMenuSize(){ return menuSize; }
+    public void setMenuSize(float size){ menuSize = size; }
     
     public float angleToRadian(float angle)
     {
@@ -40,7 +45,7 @@ public class Menu : MonoBehaviour
 
 
             holder.GetComponent<RectTransform>().localScale = Vector3.one;
-            holder.GetComponent<RectTransform>().sizeDelta = new Vector2(50, 50);
+            holder.GetComponent<RectTransform>().sizeDelta = new Vector2(menuSize, menuSize);
             //holder.GetComponent<RectTransform>().position = Vector3.zero;
             Vector3 temp = transform.rotation.eulerAngles;
             temp.z = angle;

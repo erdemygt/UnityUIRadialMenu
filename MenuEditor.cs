@@ -14,12 +14,13 @@ public class MenuEditor : Editor
         Menu myScript = (Menu)target;
 
         myScript.setMenuSize( EditorGUILayout.Slider( "Menu Size",myScript.getMenuSize(),  10f,  50f));
-
+        myScript.setButtonCount(EditorGUILayout.IntField("Button Count", myScript.getButtonCount()));
 
         if (GUILayout.Button("Build Object"))
         {
             myScript.drawRadialMenu();
         }
+       
 
     }
 

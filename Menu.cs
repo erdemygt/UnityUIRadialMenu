@@ -5,7 +5,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     public GameObject buttonPrefab;
-    public int buttonCount;
+    int buttonCount;
     public float offset;
     GameObject parent;
     public Transform mainCanvas;
@@ -15,8 +15,30 @@ public class Menu : MonoBehaviour
 
 
     public float getMenuSize(){ return menuSize; }
-    public void setMenuSize(float size){ menuSize = size; }
+    public void setMenuSize(float size) {  menuSize = size; }
     
+
+    public int getButtonCount() { return buttonCount; }
+    public void setButtonCount(int bC) 
+    {
+        
+        if (bC > 360) { bC = 360; }
+        if(bC < 1) { bC = 1; }
+        if (360 % bC == 0)
+        {
+            buttonCount = bC;
+        }
+        else 
+        {
+            setButtonCount(bC -1);
+        }
+
+            
+                
+    }
+
+
+
     public float angleToRadian(float angle)
     {
         return Mathf.PI * angle / 180;

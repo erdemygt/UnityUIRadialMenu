@@ -15,6 +15,8 @@ public class MenuEditor : Editor
 
         myScript.setMenuSize( EditorGUILayout.Slider( "Menu Size",myScript.getMenuSize(),  10f,  50f));
         myScript.setButtonCount(EditorGUILayout.IntField("Button Count", myScript.getButtonCount()));
+        myScript.setInnerCircle(EditorGUILayout.Slider("Inner Radial Size", myScript.getInnerCircle(), 0f, 1f));
+        myScript.setOuterCircle(EditorGUILayout.Slider("Outer Radial Size", myScript.getOuterCircle(), 0f, 1f));
 
         if (GUILayout.Button("Build Object"))
         {

@@ -12,11 +12,17 @@ public class Menu : MonoBehaviour
     GameObject holder;
     public Material shaderMaterial;
     float menuSize = 10;
-
+    
 
     public float getMenuSize(){ return menuSize; }
     public void setMenuSize(float size) {  menuSize = size; }
     
+
+    public float getInnerCircle(){ return shaderMaterial.GetFloat("_innerCircle");}
+    public void setInnerCircle(float s) { shaderMaterial.SetFloat("_innerCircle",s); }
+
+    public float getOuterCircle() { return shaderMaterial.GetFloat("_outerCircle"); }
+    public void setOuterCircle(float s) { shaderMaterial.SetFloat("_outerCircle",s); }
 
     public int getButtonCount() { return buttonCount; }
     public void setButtonCount(int bC) 

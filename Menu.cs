@@ -11,11 +11,19 @@ public class Menu : MonoBehaviour
     public Transform mainCanvas;
     GameObject holder;
     public Material shaderMaterial;
-    float menuSize = 10;
+    int menuSize = 10;
     
 
-    public float getMenuSize(){ return menuSize; }
-    public void setMenuSize(float size) {  menuSize = size; }
+    public int getMenuSize(){ return menuSize; }
+    public void setMenuSize(int size) 
+    {
+        if (size != menuSize)
+        {
+            drawRadialMenu();
+        }
+        menuSize = size;
+         
+    }
     
 
     public float getInnerCircle(){ return shaderMaterial.GetFloat("_innerCircle");}
@@ -32,7 +40,12 @@ public class Menu : MonoBehaviour
         if(bC < 1) { bC = 1; }
         if (360 % bC == 0)
         {
+            if( bC != buttonCount)
+            {
+                drawRadialMenu();
+            }
             buttonCount = bC;
+            
         }
         else 
         {

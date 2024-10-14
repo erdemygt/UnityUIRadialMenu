@@ -11,9 +11,10 @@ public class MenuEditor : Editor
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
+        
         Menu myScript = (Menu)target;
 
-        myScript.setMenuSize( EditorGUILayout.Slider( "Menu Size",myScript.getMenuSize(),  10f,  50f));
+        myScript.setMenuSize( EditorGUILayout.IntSlider( "Menu Size",myScript.getMenuSize(),  10,  50));
         myScript.setButtonCount(EditorGUILayout.IntField("Button Count", myScript.getButtonCount()));
         myScript.setInnerCircle(EditorGUILayout.Slider("Inner Radial Size", myScript.getInnerCircle(), 0f, 1f));
         myScript.setOuterCircle(EditorGUILayout.Slider("Outer Radial Size", myScript.getOuterCircle(), 0f, 1f));
@@ -22,7 +23,9 @@ public class MenuEditor : Editor
         {
             myScript.drawRadialMenu();
         }
-       
+
+
+
 
     }
 

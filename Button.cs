@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class Button : Image
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+public class Button : Image, IPointerEnterHandler,IPointerExitHandler
 {
     float innerCircle;           //_InnerCircle
     float outerCircle;           //_OuterCircle
@@ -11,6 +12,14 @@ public class Button : Image
     float tanDegree;
     float innerMin;
     float outerMax;
+    
+    int hoverEffectSizeDifference = 1;
+
+
+
+    
+
+
     public override bool Raycast(Vector2 sp, Camera eventCamera)
     {
         // Get the local point from the screen point
@@ -80,5 +89,22 @@ public class Button : Image
     {
         Debug.Log(gameObject.name);
     }
-   
+
+
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x + hoverEffectSizeDifference
+            , GetComponent<RectTransform>().sizeDelta.y + hoverEffectSizeDifference);
+
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x - hoverEffectSizeDifference
+            , GetComponent<RectTransform>().sizeDelta.y - hoverEffectSizeDifference);
+        
+    }
+
 }

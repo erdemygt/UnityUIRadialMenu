@@ -65,7 +65,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _degree: 20
+    - _degree: 90
     - _float: 45
     - _innerCircle: 0.49
     - _outerCircle: 0.98

@@ -1,27 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Menu : MonoBehaviour
 {
     public GameObject buttonPrefab;
-    int buttonCount;
-    public float offset;
+    int buttonCount = 1;
+    float offset = 0.3f;
     GameObject parent;
     public Transform mainCanvas;
     GameObject holder;
     public Material shaderMaterial;
     int menuSize = 10;
+   
     
+    public void setOffset(float o) 
+    {
+        if (o < 0.3) { o = 0.3f; } 
+        if(offset != o)
+        {
+            offset = o;
+            drawRadialMenu();
+        }
+         
+    }
+    public float getOffset() { return offset; }
 
     public int getMenuSize(){ return menuSize; }
     public void setMenuSize(int size) 
     {
         if (size != menuSize)
         {
+            menuSize = size;
             drawRadialMenu();
         }
-        menuSize = size;
+       
          
     }
     
@@ -42,9 +55,12 @@ public class Menu : MonoBehaviour
         {
             if( bC != buttonCount)
             {
+                buttonCount = bC;
                 drawRadialMenu();
             }
-            buttonCount = bC;
+            
+            
+           
             
         }
         else 
@@ -70,7 +86,7 @@ public class Menu : MonoBehaviour
         
         
         DestroyImmediate(parent);
-
+        if(buttonCount == 0) { buttonCount = 1; }
         shaderMaterial.SetFloat("_degree", (360 / buttonCount));
         
         parent = new GameObject("radialMenu");
@@ -81,12 +97,15 @@ public class Menu : MonoBehaviour
             float angle = (360 / buttonCount) * i;
 
             holder = Instantiate(buttonPrefab, parent.transform.position, parent.transform.rotation);
+            
             holder.name = "button" + i;
             holder.transform.SetParent(parent.transform, true);
-
-
+            
+             
             holder.GetComponent<RectTransform>().localScale = Vector3.one;
             holder.GetComponent<RectTransform>().sizeDelta = new Vector2(menuSize, menuSize);
+            
+            
             //holder.GetComponent<RectTransform>().position = Vector3.zero;
             Vector3 temp = transform.rotation.eulerAngles;
             temp.z = angle;

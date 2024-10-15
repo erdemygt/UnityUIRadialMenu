@@ -14,6 +14,9 @@ public class MenuEditor : Editor
         
         Menu myScript = (Menu)target;
 
+
+
+        myScript.setOffset(EditorGUILayout.FloatField("Offset", myScript.getOffset()));
         myScript.setMenuSize( EditorGUILayout.IntSlider( "Menu Size",myScript.getMenuSize(),  10,  50));
         myScript.setButtonCount(EditorGUILayout.IntField("Button Count", myScript.getButtonCount()));
         myScript.setInnerCircle(EditorGUILayout.Slider("Inner Radial Size", myScript.getInnerCircle(), 0f, 1f));

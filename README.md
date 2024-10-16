@@ -19,29 +19,29 @@ The canvas Render Mode needs to be "Screen Space - Camera".
 
 ### Usage
 Generate a GameObject acts like a controller. Put Menu script to it as a component. The fields become like this:
-![Inspector view](/image/inspector.png "")
+![Inspector view](/images/inspector.png "")
 
 
 
 #### Offset
 
-![offset variable.](/image/offsetGIF.gif "This is a sample image.")
+![offset variable.](/images/offsetGIF.gif "This is a sample image.")
 
 #### Button Count
 
-![button Count variable.](/image/buttonCountGIF.gif "This is a sample image.")
+![button Count variable.](/images/buttonCountGIF.gif "This is a sample image.")
 
 #### Size
 
-![size variable.](/image/sizeGIF.gif "This is a sample image.")
+![size variable.](/images/sizeGIF.gif "This is a sample image.")
 
 #### Inner Radial
 
-![inner radial variable.](/image/innerRadialGIF.gif "This is a sample image.")
+![inner radial variable.](/images/innerRadialGIF.gif "This is a sample image.")
 
 #### Outer Radial
 
-![outer radial varible.](/image/outerRadialGIF.gif "This is a sample image.")
+![outer radial varible.](/images/outerRadialGIF.gif "This is a sample image.")
 
 #### Color
 

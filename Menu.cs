@@ -91,7 +91,7 @@ public class Menu : MonoBehaviour
         
         parent = new GameObject("radialMenu");
         parent.transform.SetParent(mainCanvas,true);
-
+        
         for (int i = 0; i < buttonCount; i++)
         {
             float angle = (360 / buttonCount) * i;

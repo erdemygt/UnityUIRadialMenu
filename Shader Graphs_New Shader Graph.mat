@@ -65,10 +65,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _degree: 90
+    - _degree: 36
     - _float: 45
-    - _innerCircle: 0.49
-    - _outerCircle: 0.98
+    - _innerCircle: 0.466
+    - _outerCircle: 0.924
     - _scrollVelocity: 2
     - _yOffset: 0
     m_Colors:
